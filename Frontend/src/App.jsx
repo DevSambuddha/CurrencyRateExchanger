@@ -35,10 +35,16 @@ function App() {
           <form
             onSubmit={(e) => {
               e.preventDefault();
+              convert();
             }}
           >
             <div className="w-full mb-1">
-              <InputBox label="From" />
+              <InputBox
+                label="From"
+                amount={amount}
+                currencyOptions={options}
+                onCurrencyChange={(currency) => setAmount(amount)}
+              />
             </div>
             <div className="relative w-full h-0.5">
               <button
